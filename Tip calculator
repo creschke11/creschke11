@@ -1,0 +1,23 @@
+#This tool will calculate how much each person at dinner must pay, including tip.
+
+
+print("Welcome to the tip calculator!")
+totalbillwithouttip = input("What was the total bill without tip?")
+howmuchtip = input("How much % would you like to tip? 12, 15, 18 or 20? Enter as a decimal such as 0.20, 0.15 etc.")
+howmanypeople = input("How many people to split the bill?")
+
+
+floattotalbillwithouttip = float(totalbillwithouttip)
+floathowmuchtip = float(howmuchtip)
+floathowmanypeople = float(howmanypeople)
+
+totaltip = floattotalbillwithouttip * floathowmuchtip
+
+floattotaltip = float(totaltip)
+
+totalbillwithtip = floattotalbillwithouttip + floattotaltip
+floattotalbillwithtip = float(totalbillwithtip)
+
+totalbillperperson = floattotalbillwithtip/floathowmanypeople
+
+print(totalbillperperson)
