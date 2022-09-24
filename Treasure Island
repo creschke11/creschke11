@@ -1,0 +1,19 @@
+print("Welcome to Treasure Island! You must find the treasure, be careful with your choices!")
+
+leftorright = input("Would you like to go left or right?").lower()
+if leftorright == "left":
+    swimorwait = input("You've come to an island, type 'swim' to swim, or type 'wait' to wait").lower()
+    if swimorwait == "wait":
+        whichdoor = input("This is the final challenge. You must choose a door between 'red', 'yellow', and 'blue'. Type your answer.").lower()
+        if whichdoor == "yellow":
+            print("You win!")
+        elif whichdoor == "red":
+            print("You lose!")
+        elif whichdoor == "blue":
+            print("You lose!")
+        else:
+            print("Didnt even know that color was an option, you lose and youre a dud.")
+    else:
+        print("You got attacked by an angry trout, game over.")
+else:
+    print("L bozo, should have waited.")
