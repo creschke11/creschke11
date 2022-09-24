@@ -1,0 +1,18 @@
+age = input("What is your current age?")
+
+ageint = int(age)
+
+yearstolive = 90
+monthsin90years = 1080
+weeksin90years = 4680
+daysin90years = 32850
+
+ageinmonths = ageint * 12
+ageinweeks = ageint * 52
+ageindays = ageint * 365
+
+ageleftinmonths = monthsin90years - ageinmonths
+ageleftinweeks = weeksin90years - ageinweeks
+ageleftindays = daysin90years - ageindays
+
+print(f"You have {ageleftindays} days, {ageleftinweeks} weeks, and {ageleftinmonths} months left.")
