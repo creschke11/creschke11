@@ -1,0 +1,13 @@
+import math
+
+def paintcalc(height, width, coveragepercanofpaint):
+    area = height * width
+    num_of_cans = math.ceil(area / coveragepercanofpaint)
+    print(f"You'll need {num_of_cans} cans of paint to paint {area} metres of area.")
+
+
+
+height = int(input("How high are you painting in metres?"))
+width = int(input("What is the width of the surface you would like to paint in metres?"))
+coveragepercanofpaint = 5
+paintcalc(height, width, coveragepercanofpaint)
