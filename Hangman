@@ -1,0 +1,93 @@
+HANGMANPICS = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
+
+HANGMANPICS.reverse()
+
+
+import random
+word_list = ["python", "coding", "excellent"]
+chosenword = random.choice(word_list)
+print(f"The chosen word is {chosenword}")
+wordlength = len(chosenword)
+
+
+lives = 6
+
+
+display = []
+for _ in range(wordlength):
+    display += "_"
+print(display)
+
+
+endofgame = False
+
+
+while not endofgame:
+    print(HANGMANPICS[lives])
+    guess = input("Guess a letter: ").lower()
+    for position in range(wordlength):
+        letter = chosenword[position]
+        if letter == guess:
+            display[position] = letter
+    print(display)
+
+    if "_" not in display:
+        endofgame = True
+        print("You won!")
+
+    if guess not in chosenword:
+        print(HANGMANPICS[lives])
+        lives -= 1
+        if lives == 0:
+            endofgame = True
+            print(HANGMANPICS[lives])
+            print("You lose!")
